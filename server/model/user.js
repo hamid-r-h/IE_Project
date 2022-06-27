@@ -11,18 +11,6 @@ const userSchema = mongoose.Schema({
 
 const User = mongoose.model('user', userSchema);
 
-const schema = Joi.object({
-    pass: new PasswordComplexity({
-        min: 8,
-        max: 26,
-        lowerCase: 1,
-        upperCase: 1,
-        numeric: 1,
-        requirementCount: 3
-      }),
-      mail: Joi.string().email().required()
-});
-
 const userValidation = (user) => {
     const schema = Joi.object({
         username: Joi.string().min(3).max(32).required(),
