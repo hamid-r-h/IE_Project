@@ -1,6 +1,7 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const signup = require('./auth/signup');
+const express = require("express");
+const mongoose = require("mongoose");
+const login = require("./auth/login");
+const signup = require("./auth/signup");
 require("dotenv").config({ path: "./.env" });
 
 mongoose
@@ -11,6 +12,7 @@ mongoose
 const app = express();
 app.use(express.json());
 
-app.post('/api/auth/signup', signup);
+app.post("/api/auth/signup", signup);
+app.post("/api/auth/login", login);
 
-app.listen(9000, () => console.log('listening on port 9000 ...'));
+app.listen(9000, () => console.log("listening on port 9000 ..."));
