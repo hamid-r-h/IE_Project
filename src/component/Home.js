@@ -7,6 +7,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
 import Grid from '@mui/material/Grid';
+import SignModal from "./SignModal"
 
 const Home = () => {
   useEffect(() => {
@@ -18,6 +19,9 @@ const Home = () => {
   const [open_laptop, setOpenL] = useState(false);
   const [open_mobileM, setopenMM] = useState(false);
   const [open_laptopM, setOpenLM] = useState(false);
+  const [openmodal, setmodal] = useState(false);
+  const [first, setFirst] = useState(true);
+
  const handleMtab=()=>{
    if(open_mobile)
     setopenM(false);
@@ -61,12 +65,25 @@ const Home = () => {
      setopenMM(false);
     }
    }
+
+   const handlemodal=()=>{
+    if(openmodal){
+    setmodal(false);
+    setFirst(true);
+    }
+    else
+    setmodal(true)
+   }
+   const handlefirst=()=>{
+    setFirst(false);
+   }
+   
  
     return(
 <div>
     <div className="navbar">
          <ul className="navbar-item">
-             <li className="sign"> ورود/ثبت نام </li>
+             <li className="sign" onClick={handlemodal}> ورود/ثبت نام </li>
              <li className="laptop"  onClick={handleLtab}> لپ تاپ </li>
              <li className="mobile" onClick={handleMtab}> موبایل و تبلت </li>
          </ul>
@@ -94,7 +111,7 @@ const Home = () => {
                             </ListItem>
 
             ))}
-                        </ul>
+     </ul>
    
          
             <ul className="list2">
@@ -146,7 +163,7 @@ const Home = () => {
 
 
             ))}
-                                  </ul>
+              </ul>
 
    
          
@@ -179,6 +196,9 @@ const Home = () => {
           <i className="fa fa-search fa-lg" aria-hidden="true" ></i>
       </div>
     </div>
+
+    <SignModal modal={openmodal}  handle={handlemodal} first_page={first} handlepage={handlefirst}  /> : <div/>
+
    </div>
     
 
