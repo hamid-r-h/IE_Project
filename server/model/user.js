@@ -1,12 +1,14 @@
 const mongoose = require("mongoose");
 const PasswordComplexity = require("joi-password-complexity");
 const Joi = require("joi");
+const { productSchema } = require("./product");
 
 
 const userSchema = mongoose.Schema({
     username: String,
     password: String,
-    email: String
+    email: String,
+    favorites: [{type: mongoose.Types.ObjectId, ref: 'product'}] 
 });
 
 const User = mongoose.model('user', userSchema);
