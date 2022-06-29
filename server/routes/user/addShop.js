@@ -16,7 +16,8 @@ const addShop = async (req, res) => {
   const savedShop = await shop.save();
   await user.update({ $push: { shops: savedShop._id } });
   return res.status(200).send({
-    message: "shop added successfully",
+    shop: shop,
+    message: "shop added successfully"
   });
 };
 
