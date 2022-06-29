@@ -1,8 +1,9 @@
-const { User, userValidation } = require("../../model/user");
-const hashing = require("../../util/hash");
-const getToken = require("../../util/jwt");
+const { User, userValidation } = require("../model/user");
+const hashing = require("../util/hash");
+const getToken = require("../util/jwt");
 
 const signup = async (req, res) => {
+  console.log("aaaa")
   const user = await User.findOne({
     $or: [{ username: req.body.username }, { email: req.body.email }],
   });
@@ -27,9 +28,11 @@ const signup = async (req, res) => {
   newUser.password = await hashing(newUser.password);
   const token = getToken({ id: newUser._id });
   newUser.save();
+  console.log("ddd");
+
   return res
     .status(200)
-    .send({ token: token, message: 'user added successfully' });
+    .send({ token: token, message: 'ok' });
 };
 
 module.exports = signup;

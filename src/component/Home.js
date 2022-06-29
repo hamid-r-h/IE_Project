@@ -10,9 +10,9 @@ import Grid from '@mui/material/Grid';
 import SignModal from "./SignModal"
 
 const Home = () => {
-  useEffect(() => {
-   
-  }, []);
+
+
+
   const mobile_item=[":گوشی موبایل","گوشی سامسونگ","گوشی اپل"," گوشی شیائومی",":تبلت"," تبلت سامسونگ"," تبلت شیائومی"," تبلت اپل"]
   const laptop_item=[":لپتاپ","لپ تاپ لنوو" , "لپ تاپ ایسوس" , "لپتاپ اپل"]
   const [open_mobile, setopenM] = useState(false);
@@ -21,6 +21,8 @@ const Home = () => {
   const [open_laptopM, setOpenLM] = useState(false);
   const [openmodal, setmodal] = useState(false);
   const [first, setFirst] = useState(true);
+  const [valid, setvalid] = useState(true);
+
 
  const handleMtab=()=>{
    if(open_mobile)
@@ -55,7 +57,9 @@ const Home = () => {
    setopenMM(false);
    setOpenLM(false);
  }
- 
+ const handlevalid=()=>{
+  setvalid(false);
+}
    const handleLMtab=()=>{
      if(open_laptopM)
       setOpenLM(false);
@@ -70,9 +74,12 @@ const Home = () => {
     if(openmodal){
     setmodal(false);
     setFirst(true);
+    setvalid(true);
+
     }
     else
-    setmodal(true)
+    setmodal(true);
+
    }
    const handlefirst=()=>{
     setFirst(false);
@@ -87,6 +94,7 @@ const Home = () => {
              <li className="laptop"  onClick={handleLtab}> لپ تاپ </li>
              <li className="mobile" onClick={handleMtab}> موبایل و تبلت </li>
          </ul>
+
         
 
 
@@ -137,7 +145,7 @@ const Home = () => {
 
 
   <input type="checkbox" id="hamburger-input" className="burger-shower" onClick={handleclose} />
-  <span className="sign-mini">      ورود/ثبت نام  </span>
+  <span className="sign-mini" onClick={handlemodal}  >      ورود/ثبت نام  </span>
         <div className="drop-down">
 
             <ul>
@@ -197,7 +205,7 @@ const Home = () => {
       </div>
     </div>
 
-    <SignModal modal={openmodal}  handle={handlemodal} first_page={first} handlepage={handlefirst}  /> : <div/>
+    <SignModal modal={openmodal}  handle={handlemodal} first_page={first} handlepage={handlefirst} valid={valid} handlevalid={handlevalid} /> : <div/>
 
    </div>
     
