@@ -2,6 +2,7 @@ const Product = require("../../../model/product");
 const Shop = require("../../../model/shop");
 const _ = require("lodash");
 const { User } = require("../../../model/user");
+const mongoose = require("mongoose");
 
 const addProduct = async (req, res) => {
   const user = await User.findOne({ _id: req.user.id });
@@ -9,6 +10,13 @@ const addProduct = async (req, res) => {
     return res.status(400).send({
       error: {
         message: "user does not exists",
+      },
+    });
+  }
+  if (!mongoose.Types.ObjectId.isValid(req.params.shopid)) {
+    return res.status(400).send({
+      error: {
+        message: "invalid id",
       },
     });
   }
@@ -20,7 +28,7 @@ const addProduct = async (req, res) => {
       },
     });
   }
-  let userShopId = user.shops.find(s => s.equals(shop._id));
+  let userShopId = user.shops.find((s) => s.equals(shop._id));
 
   if (!userShopId) {
     return res.status(400).send({

@@ -9,6 +9,7 @@ const getProducts = require("./routes/products/getProducts");
 const addProduct = require("./routes/user/product/addProduct");
 const getReports = require("./routes/user/getReports");
 const addReport = require("./routes/user/addReport");
+const getProductDetail = require("./routes/products/getProductDetail");
 
 mongoose
   .connect("mongodb://localhost:27017/final-project")
@@ -50,5 +51,6 @@ app.get("/api/user/:shopid/reports", authenticateToken, getReports);
 app.post("/api/user/:shopid/report", authenticateToken, addReport);
 
 app.get("/api/products", getProducts);
+app.get("/api/products/:id", getProductDetail);
 
 app.listen(9000, () => console.log("listening on port 9000 ..."));

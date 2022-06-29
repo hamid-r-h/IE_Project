@@ -1,6 +1,14 @@
 const Shop = require("../../model/shop");
+const mongoose = require("mongoose");
 
 const addReport = async (req, res) => {
+  if (!mongoose.Types.ObjectId.isValid(req.params.shopid)) {
+    return res.status(400).send({
+      error: {
+        message: "invalid id",
+      },
+    });
+  }
   const shop = await Shop.findOne({ _id: req.params.shopid });
   if (!shop) {
     return res.status(400).send({

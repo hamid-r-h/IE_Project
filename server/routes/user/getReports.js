@@ -1,5 +1,6 @@
 const Shop = require("../../model/shop");
 const { User } = require("../../model/user");
+const mongoose = require('mongoose');
 
 const getReports = async (req, res) => {
   const user = await User.findOne({ _id: req.user.id });
@@ -7,6 +8,13 @@ const getReports = async (req, res) => {
     return res.status(400).send({
       error: {
         message: "user does not exists",
+      },
+    });
+  }
+  if (!mongoose.Types.ObjectId.isValid(req.params.shopid)) {
+    return res.status(400).send({
+      error: {
+        message: "invalid id",
       },
     });
   }
