@@ -8,6 +8,7 @@ const addShop = require("./routes/user/addShop");
 const getProducts = require("./routes/products/getProducts");
 const addProduct = require("./routes/user/product/addProduct");
 const getReports = require("./routes/user/getReports");
+const addReport = require("./routes/user/addReport");
 
 mongoose
   .connect("mongodb://localhost:27017/final-project")
@@ -46,6 +47,7 @@ app.post("/api/auth/login", login);
 app.post("/api/user/shop", authenticateToken, addShop);
 app.post("/api/user/:shopid/product", authenticateToken, addProduct);
 app.get("/api/user/:shopid/reports", authenticateToken, getReports);
+app.post("/api/user/:shopid/report", authenticateToken, addReport);
 
 app.get("/api/products", getProducts);
 
