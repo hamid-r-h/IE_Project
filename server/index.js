@@ -11,6 +11,7 @@ const getReports = require("./routes/user/getReports");
 const addReport = require("./routes/user/addReport");
 const getProductDetail = require("./routes/products/getProductDetail");
 const addToFavorites = require("./routes/user/addToFavorites");
+const editUser = require("./routes/user/editUser");
 
 mongoose
   .connect("mongodb://localhost:27017/final-project")
@@ -51,6 +52,7 @@ app.post("/api/user/:shopid/product", authenticateToken, addProduct);
 app.get("/api/user/:shopid/reports", authenticateToken, getReports);
 app.post("/api/user/:shopid/report", authenticateToken, addReport);
 app.post("/api/user/favorites/:id", authenticateToken, addToFavorites);
+app.put("/api/user", authenticateToken, editUser);
 
 app.get("/api/products", getProducts);
 app.get("/api/products/:id", getProductDetail);
