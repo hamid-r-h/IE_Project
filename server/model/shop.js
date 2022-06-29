@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 const shopSchema = mongoose.Schema({
     name: String,
-    shopWebAddress: String,
     reports: [String]
 });
 

@@ -1,6 +1,6 @@
-const { User } = require("../model/user");
+const { User } = require("../../model/user");
 const bcrypt = require('bcrypt');
-const getToken = require("../util/jwt");
+const getToken = require("../../util/jwt");
 
 const login = async (req, res) => {
   const user = await User.findOne({ username: req.body.username });

@@ -1,10 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const login = require("./auth/login");
-const signup = require("./auth/signup");
+const login = require("./routes/auth/login");
+const signup = require("./routes/auth/signup");
 require("dotenv").config({ path: "./.env" });
 const jwt = require("jsonwebtoken");
-const getProducts = require("./product/getProducts");
+const addShop = require("./routes/user/addShop");
+
 
 mongoose
   .connect("mongodb://localhost:27017/final-project")
@@ -39,6 +40,7 @@ function authenticateToken(req, res, next) {
 app.post("/api/auth/signup", signup);
 app.post("/api/auth/login", login);
 
-app.get("/api/products", getProducts);
+app.post("/api/user/shop", authenticateToken, addShop)
+
 
 app.listen(9000, () => console.log("listening on port 9000 ..."));
