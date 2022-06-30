@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import Home from "./component/Home";
 import app from "./app.css";
 import Favorites from "./component/Favorites";
+import EditProfile from "./component/EditProfile";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/home" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/favorites" element={<Favorites />} />
+          <Route path="/profile/edit" element={<EditProfile />} />
         </Routes>
       </Router>
     </div>
