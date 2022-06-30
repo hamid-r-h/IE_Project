@@ -8,6 +8,9 @@ const Profile = () => {
     <>
       <div className={`${style.header}`}>نمایه ها</div>
       <ul>
+      <li>
+          <Link to={`/profile/edit`}><div>ویرایش اطلاعات</div></Link>
+        </li>
         <li>
           <Link to={`/profile/favorites`}><div>محبوب ها</div></Link>
         </li>
