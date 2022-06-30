@@ -1,6 +1,6 @@
-const { User, userValidation } = require("../model/user");
-const hashing = require("../util/hash");
-const getToken = require("../util/jwt");
+const { User, userValidation } = require("../../model/user");
+const hashing = require("../../util/hash");
+const getToken = require("../../util/jwt");
 
 const signup = async (req, res) => {
   console.log("aaaa")
