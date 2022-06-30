@@ -7,7 +7,7 @@ const Profile = () => {
   return (
     <>
       <div className={`${style.header}`}>نمایه ها</div>
-      <ul>
+      <ul className={style.ul}>
       <li>
           <Link to={`/profile/edit`}><div>ویرایش اطلاعات</div></Link>
         </li>

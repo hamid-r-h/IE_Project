@@ -10,7 +10,7 @@
     color: #777;
 }
 
-ul {
+.ul {
     direction: rtl;
     list-style-type: none;
     padding: 0;
@@ -20,7 +20,7 @@ ul {
     align-items: center;
 }
 
-ul li {
+.ul li {
     width: 95%;
     cursor: pointer;
     margin-bottom: 5px;
@@ -31,10 +31,10 @@ ul li {
     transition: all 0.3s ease;
 }
 
-ul li a{
+.ul li a{
     all: unset;
 }
 
-ul li:hover{
+.ul li:hover{
     transform: scale(1.03,1.03);
 }
