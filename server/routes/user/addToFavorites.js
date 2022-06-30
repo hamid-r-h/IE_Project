@@ -10,6 +10,14 @@ const addToFavorites = async (req, res) => {
             }
         });
     }
+    let p = user.favorites.find(a => a.equals(req.params.id));
+    if(p){
+        return res.status(400).send({
+            error: {
+                message: 'product already exists'
+            }
+        });
+    }
     await user.updateOne({$push: {favorites: req.params.id}});
     return res.status(200).send({
         message: 'successfull'
