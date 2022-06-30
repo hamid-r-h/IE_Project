@@ -12,6 +12,7 @@ const addReport = require("./routes/user/addReport");
 const getProductDetail = require("./routes/products/getProductDetail");
 const addToFavorites = require("./routes/user/addToFavorites");
 const editUser = require("./routes/user/editUser");
+const cors = require('cors');
 
 mongoose
   .connect("mongodb://localhost:27017/final-project")
@@ -20,6 +21,7 @@ mongoose
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 function authenticateToken(req, res, next) {
   const authHeader = req.headers["authorization"];
