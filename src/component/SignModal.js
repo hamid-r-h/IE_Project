@@ -25,6 +25,7 @@ const SignModal = ({
   handlepage,
   valid,
   handlevalid,
+  log_in,
 }) => {
   const [username, setusername] = useState("");
   const [email, setemail] = useState("");
@@ -48,6 +49,9 @@ const SignModal = ({
         });
       if (res) {
         await setmessage(res.data.message);
+        sessionStorage.setItem("token",res.data.token );
+        log_in();
+
       }
     };
 
@@ -62,6 +66,8 @@ const SignModal = ({
         });
       if (res) {
         await setmessage(res.data.message);
+        sessionStorage.setItem("token",res.data.token );
+        log_in();
       }
     };
     
