@@ -1,0 +1,156 @@
+.navbar { 
+    height: 60px;
+    font-family: iranyekan;
+  }
+  .navbar_item{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items:flex-start;
+    
+  }
+  .navbar li:hover{
+    cursor: pointer;
+  }
+  .sign{
+    border: 2px solid rgba(39, 37, 37, 0.193);
+    padding:3px 10px ;
+    border-radius: 3px;
+  }
+  
+
+  .navbar li{
+  color:rgb(107, 101, 101);
+  width:auto;
+  display: flex;
+  flex-wrap: wrap;
+  float:none ;
+  text-align: center;
+  font-size: 14px;
+  transition: 0.2s;
+  }
+ .laptop{
+     display: flex;
+    flex-wrap: wrap;
+     position: absolute;
+    right: 0;
+    padding-right: 200px;
+ }
+ .mobile{
+    display: flex;
+    flex-wrap: wrap;
+     position: absolute;
+    right: 0;
+    padding-right: 50px;
+ }
+ .list1{
+  display: block;
+   position: absolute;
+  right: 0;
+  padding-right: 170px;
+ }
+
+ .list2{
+  display: block;
+
+position: absolute;
+ right: 0;
+}
+  .laptop:hover{
+    color: rgb(226, 15, 15);
+  }
+  .mobile:hover{
+    color: rgb(226, 15, 15);
+  }  
+  
+  .drop_down{
+    display: none;
+    align-items: center;
+    width: auto;
+    background-color: white;
+    box-shadow: 1px 1px 7px 5px rgba(0, 0, 0, 0.384);
+    height: auto;
+    margin: 2px 30px 0px 40px;
+    border-radius:20px;
+  }
+ 
+  .drop_down li{
+    float: none;
+    display: flex;
+    text-align: center center;
+    font-size: 15px;
+    padding-left: 100px;
+  }
+  .sign_mini{
+      display: none;
+  }
+
+ .burger_shower{
+    opacity: 0;
+  }
+
+
+  .drop_down ul{
+    margin:15px 0px;
+  }
+ 
+    
+      
+  @media screen and (max-width: 800px) {
+    
+    .list3{
+
+      position: absolute;
+       left: 0;
+       padding-left: 30px;
+      }
+      .list4{
+        text-align: center;
+         left: 0;
+         padding-left: 30px;
+        }
+
+
+    .navbar ul{
+      display: none;
+    }
+    
+    input:checked ~ .drop_down {
+      display: flex;  
+    }
+    .sign_mini{
+        border: 2px solid rgba(39, 37, 37, 0.193);
+        padding:3px 10px ;
+        border-radius: 3px;
+        display: block;
+        position: absolute;
+        left: 0;
+        top:0;
+    }
+    .navbar li:hover{
+      opacity: 0.7;
+    }
+    .drop_down{
+      display: none;
+    }
+    .icon_burger .lines{
+        position: absolute;
+        right: 0;
+        padding-right: 30px;
+
+    }
+  .icon_burger .line {
+      padding-right: 30px;
+    position: relative;
+    margin: 4px 0px;
+    width: 40px;
+    height: 8px;
+    background-color:#f1b717;
+
+  }
+
+
+
+  }
+
+  

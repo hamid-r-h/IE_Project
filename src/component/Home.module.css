@@ -1,0 +1,52 @@
+.title{
+      
+    margin: auto;
+    height: 10%;
+    width: 25%;
+    margin-top: 170px;
+  }
+  
+  .title_first{
+
+    text-align:right;
+  }
+  .title_first h1{
+    padding-top: 15px;
+
+    font-size: 43px;
+    color: rgb(233, 16, 16);
+  }
+  .title_first p{ 
+    color:rgb(107, 101, 101);
+  }
+  .title img{
+    float: right;
+
+    display: block;
+    margin-left: auto;
+     margin-right: auto;
+      height:  120px;
+      margin-top: 20px;
+  }
+
+  .title input{
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 50px;
+    font-size:20px;
+    height: 10px;
+    width: 100%;
+    text-align:right;
+  }
+  .title i{
+    position:absolute;
+    margin-left: auto;
+    color:rgb(107, 101, 101);
+
+    font-size:30px;
+    width: 28%;
+    margin-top: -40px;
+    text-align:right;
+  }
+  

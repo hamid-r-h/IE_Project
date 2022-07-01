@@ -1,208 +1,79 @@
-.navbar { 
-    height: 60px;
-    font-family: iranyekan;
-  }
-  .navbar-item{
-    width: 100%;
-    margin: auto;
-    display: flex;
-    align-items:flex-start;
-    
-  }
-  .navbar li:hover{
-    cursor: pointer;
-  }
-  .sign{
-    border: 2px solid rgba(39, 37, 37, 0.193);
-    padding:3px 10px ;
-    border-radius: 3px;
-  }
-  
-
-  .navbar li{
-  color:rgb(107, 101, 101);
-  width:auto;
-  display: flex;
-  flex-wrap: wrap;
-  float:none ;
-  text-align: center;
-  font-size: 14px;
-  transition: 0.2s;
-  }
- .laptop{
-     display: flex;
-    flex-wrap: wrap;
-     position: absolute;
-    right: 0;
-    padding-right: 200px;
- }
- .mobile{
-    display: flex;
-    flex-wrap: wrap;
-     position: absolute;
-    right: 0;
-    padding-right: 50px;
- }
- .list1{
-
-   position: absolute;
-  right: 0;
-  padding-right: 170px;
- }
-
- .list2{
-
-position: absolute;
- right: 0;
-}
-  .laptop:hover{
-    color: rgb(226, 15, 15);
-  }
-  .mobile:hover{
-    color: rgb(226, 15, 15);
-  }  
-  
-  .drop-down{
-    display: none;
-    align-items: center;
-    width: auto;
-    background-color: white;
-    box-shadow: 1px 1px 7px 5px rgba(0, 0, 0, 0.384);
-    height: auto;
-    margin: 2px 30px 0px 40px;
-    border-radius:20px;
-  }
- 
-  .drop-down li{
-    float: none;
-    display: flex;
-    text-align: center center;
-    font-size: 15px;
-    padding-left: 100px;
-  }
-  .sign-mini{
-      display: none;
-  }
-
- .burger-shower{
-    opacity: 0;
-  }
 
 
-  .drop-down ul{
-    margin:15px 0px;
-  }
- 
-    
-      
-  @media screen and (max-width: 800px) {
-    
-    .list3{
-
-      position: absolute;
-       left: 0;
-       padding-left: 30px;
-      }
-      .list4{
-        text-align: center;
-         left: 0;
-         padding-left: 30px;
-        }
-
-
-    .navbar ul{
-      display: none;
-    }
-    
-    input:checked ~ .drop-down {
-      display: flex;  
-    }
-    .sign-mini{
-        border: 2px solid rgba(39, 37, 37, 0.193);
-        padding:3px 10px ;
-        border-radius: 3px;
-        display: block;
-        position: absolute;
-        left: 0;
-        top:0;
-    }
-    .navbar li:hover{
-      opacity: 0.7;
-    }
-    .drop-down{
-      display: none;
-    }
-    .icon-burger .lines{
-        position: absolute;
-        right: 0;
-        padding-right: 30px;
-
-    }
-  .icon-burger .line {
-      padding-right: 30px;
-    position: relative;
-    margin: 4px 0px;
-    width: 40px;
-    height: 8px;
-    background-color:#f1b717;
-
-  }
-
-
-
-  }
-
-  
-
-  .title{
-      
-    margin: auto;
-    height: 10%;
-    width: 25%;
-    margin-top: 170px;
-  }
-  
-  .title-first{
-
-    text-align:right;
-  }
-  .title-first h1{
-    padding-top: 15px;
-
-    font-size: 43px;
-    color: rgb(233, 16, 16);
-  }
-  .title-first p{ 
-    color:rgb(107, 101, 101);
-  }
-  .title img{
+.filter{
+    width:200px;
     float: right;
+    margin-right: 20px;
+    border-color:red;
+}
 
-    display: block;
-    margin-left: auto;
-     margin-right: auto;
-      height:  120px;
-      margin-top: 20px;
-  }
+.price_filter{
 
-  .title input{
+}
+.filter input{
+    border-radius: 5px;
+}
+.filter li{
+    text-align: right;
+    list-style-type:none ;
+    padding-bottom: 30px;
+}
     
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 50px;
-    font-size:20px;
-    height: 10px;
-    width: 100%;
-    text-align:right;
+  .container{
+    margin-top: 15px;
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 30px;
+    margin-right: 30px;
   }
-  .title i{
-    position:absolute;
-    margin-left: auto;
-    color:rgb(107, 101, 101);
-
-    font-size:30px;
-    width: 28%;
-    margin-top: -40px;
-    text-align:right;
+  .card {
+    
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: white;
+    border-radius: 7px;
+    height: 60%;
+    width:180px;
+    flex-direction: column;
+  }
+  .card img{
+    width: 300px;
   }
   
+  .card-name{
+    font-size: 12px;
+    display: flex;
+    font-family: sans-serif;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: black;
+    text-decoration: none;
+  }
+  
+  .card-inf {
+    font-size: 10px;
+
+    margin-bottom: 10px;
+    text-align: left;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+  }
+  .button_filter{
+      font-size: 15px;
+      margin-right: 30px;
+      border: #f1b717;
+      border-radius:6px ;
+    background-color:#f1b717 ;
+      text-align: center;
+      padding:10px 40px;
+      transition: 0.5s;
+  }
+  /* btn btn-success w-100 */
+ 

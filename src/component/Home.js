@@ -9,18 +9,20 @@ import ListSubheader from "@mui/material/ListSubheader";
 import Grid from "@mui/material/Grid";
 import SignModal from "./SignModal";
 import Nav from "./Nav"
+import style from "./Home.module.css";
+
 const Home = () => {
   return (
     <div>
       {<Nav/>}
-      <div className="title">
+      <div className={`${style.title}`}>
         <img src={torob} alt="torob" />
-        <div className="title-first">
+        <div className={`${style.title_first}`}>
           <h1> ترب </h1>
           <p>موتور جستجوی هوشمند خرید</p>
         </div>
 
-        <div className="input-icons">
+        <div className={`${style.input_icon}`}>
           <input
             type="text"
             placeholder="نام کالا را وارد کنید "

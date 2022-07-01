@@ -9,19 +9,27 @@ import ListSubheader from "@mui/material/ListSubheader";
 import Grid from "@mui/material/Grid";
 import SignModal from "./SignModal";
 import { Link } from "react-router-dom";
+import style from "./Nav.module.css";
+import Box from "@mui/material/Box";
+import { display } from "@mui/system";
+import { Block } from "@mui/icons-material";
 
 const Nav = () => {
-    const mobile_item = [
-      ":گوشی موبایل",
-      "گوشی سامسونگ",
-      "گوشی اپل",
-      " گوشی شیائومی",
-      ":تبلت",
-      " تبلت سامسونگ",
-      " تبلت شیائومی",
-      " تبلت اپل",
-    ];
-    const laptop_item = [":لپتاپ", "لپ تاپ لنوو", "لپ تاپ ایسوس", "لپتاپ اپل"];
+    const mobile_item = [{ name:":گوشی موبایل",link:"mobile"}
+    ,{name:"گوشی سامسونگ",link:"msamsung"}
+    ,{name:"گوشی اپل",link:"mapple"},
+      {name:"گوشی شیائومی",link:"mxiomi"},
+      {name:":تبلت" , link:"tablet"},
+      {name:" تبلت سامسونگ",link:"tsamsung"},
+      {name:" تبلت شیائومی",link:"txiomi"},
+      {name:" تبلت اپل",link:"tapple"}
+    ]
+    const laptop_item=
+    [{ name:":لپتاپ",link:"laptop"}
+    ,{name:"لپ تاپ لنوو",link:"lenovo"}
+    ,{name:"لپتاپ ایسوس",link:"asus"},
+      {name:"لپتاپ اپل",link:"apple"}
+    ]
     const [open_mobile, setopenM] = useState(false);
     const [open_laptop, setOpenL] = useState(false);
     const [open_mobileM, setopenMM] = useState(false);
@@ -98,44 +106,45 @@ const Nav = () => {
 
       return (
           <div>
-<div className="navbar">
-        <ul className="navbar-item">
+<div className={`${style.navbar}`}>
+        <ul className={`${style.navbar_item}`}>
           {!login &&(
-          <li className="sign" onClick={handlemodal}>
+          <li className={`${style.sign}`} onClick={handlemodal}>
             {" "}
             ورود/ثبت نام{" "}
           </li>
           )}
            {login &&(
-          <li className="sign" >
+          <li className={`${style.sign}`} >
             {" "}
                <Link to={"/profile"}>  پروفایل  </Link>  {" "}
           </li>
           )}
-          <li className="laptop" onClick={handleLtab}>
+          <li className={`${style.laptop}`} onClick={handleLtab}>
             {" "}
             لپ تاپ{" "}
           </li>
-          <li className="mobile" onClick={handleMtab}>
+          <li className={`${style.mobile}`} onClick={handleMtab}>
             {" "}
             موبایل و تبلت{" "}
           </li>
         </ul>
 
-        <label htmlFor="hamburger-input" className="icon-burger">
-          <span className="lines">
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line"></div>
+        <label htmlFor={`${style.hamburger_input}`} className={`${style.icon_burger}`}>
+          <span className={`${style.lines}`}>
+            <div className={`${style.line}`}></div>
+            <div className={`${style.line}`}></div>
+            <div className={`${style.line}`}></div>
           </span>
         </label>
 
-        <ul className="list1">
+        <ul className={`${style.list1}`}>
           {open_laptop &&
             laptop_item.map((item) => (
-              <ListItem sx={{ ml: 58 }}>
+            
+              <ListItem sx={{ ml: 58}}  button component={Link} to={`/products/${item.link}`}>
                 <ListItemText
-                  primary={item}
+                  primary={item.name}
                   primaryTypographyProps={{
                     fontSize: 15,
                     fontWeight: "medium",
@@ -147,12 +156,14 @@ const Nav = () => {
             ))}
         </ul>
 
-        <ul className="list2">
+        <ul className={`${style.list2}`}>
           {open_mobile &&
             mobile_item.map((item) => (
-              <ListItem sx={{ mr: 4, mt: 0 }}>
+              
+              <ListItem sx={{ mr: 4, mt: 0 }}  button  component={Link} to={`/products/${item.link}`}>
                 <ListItemText
-                  primary={item}
+                button  component={Link} to={`/products/${item.link}`}
+                  primary={item.name}
                   primaryTypographyProps={{
                     fontSize: 15,
                     fontWeight: "medium",
@@ -166,23 +177,23 @@ const Nav = () => {
       </div>
       <input
         type="checkbox"
-        id="hamburger-input"
-        className="burger-shower"
+        id={`${style.hamburger_input}`}
+        className={`${style.burger_shower}`}
         onClick={handleclose}
       />
       {!login && (
-      <span className="sign-mini" onClick={handlemodal}>
+      <span className={`${style.sign_mini}`} onClick={handlemodal}>
         {" "}
         ورود/ثبت نام{" "}
       </span>
       )}
         {login && (
-      <span className="sign-mini">
+      <span className={`${style.sign_mini}`}>
         {" "}
         <Link to={"/profile"}>  پروفایل  </Link>  {" "}
       </span>
       )}
-      <div className="drop-down">
+      <div className={`${style.drop_down}`}>
         <ul>
           <li className="" onClick={handleLMtab}>
             {" "}
@@ -194,12 +205,13 @@ const Nav = () => {
           </li>
         </ul>
       </div>
-      <ul className="list3">
+      <ul className={`${style.list3}`}>
         {open_laptopM &&
           laptop_item.map((item) => (
-            <ListItem sx={{ ml: 15 }}>
+            <ListItem sx={{ ml: 15 }}  button  component={Link} to={`/products/${item.link}`}>
               <ListItemText
-                primary={item}
+              button  component={Link} to={`/products/${item.link}`}
+                primary={item.name}
                 primaryTypographyProps={{
                   fontSize: 15,
                   fontWeight: "medium",
@@ -212,10 +224,11 @@ const Nav = () => {
       </ul>
       {open_mobileM &&
         mobile_item.map((item) => (
-          <ul className="list4">
-            <ListItem sx={{ ml: 15, mb: -1 }}>
+          <ul className={`${style.list4}`}>
+            <ListItem sx={{ ml: 15, mb: -1 }}  button  component={Link} to={`/products/${item.link}`}  >
               <ListItemText
-                primary={item}
+              button  component={Link} to={`/products/${item.link}`}
+                primary={item.name}
                 primaryTypographyProps={{
                   fontSize: 15,
                   fontWeight: "medium",
