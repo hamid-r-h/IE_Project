@@ -39,7 +39,7 @@ const addProduct = async (req, res) => {
   }
 
   const product = new Product({
-    ..._.pick(req.body, ["name", "category", "description", "image"]),
+    ..._.pick(req.body, ["name", "category","subCategory", "description", "image"]),
     min_price: req.body.price,
     max_price: req.body.price,
     last_updated: new Date(Date.now()),
