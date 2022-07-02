@@ -14,21 +14,21 @@ import Box from "@mui/material/Box";
 import { display } from "@mui/system";
 import { Block } from "@mui/icons-material";
 
-const Nav = () => {
-    const mobile_item = [{ name:":گوشی موبایل",link:"mobile"}
-    ,{name:"گوشی سامسونگ",link:"msamsung"}
-    ,{name:"گوشی اپل",link:"mapple"},
-      {name:"گوشی شیائومی",link:"mxiomi"},
-      {name:":تبلت" , link:"tablet"},
-      {name:" تبلت سامسونگ",link:"tsamsung"},
-      {name:" تبلت شیائومی",link:"txiomi"},
-      {name:" تبلت اپل",link:"tapple"}
+const Nav = ({handle_laptop,handle_mobile}) => {
+    const mobile_item = [{ name:":گوشی موبایل",category:"mobile",subcategory:""}
+    ,{name:"گوشی سامسونگ",category:"mobile",subcategory:"samsung"}
+    ,{name:"گوشی اپل",category:"mobile",subcategory:"apple"},
+      {name:"گوشی شیائومی",category:"mobile",subcategory:"xiaomi"},
+      {name:":تبلت" ,category:"tablet",subcategory:""},
+      {name:" تبلت سامسونگ",category:"tablet",subcategory:"samsung"},
+      {name:" تبلت شیائومی",category:"tablet",subcategory:"xiaomi"},
+      {name:" تبلت اپل",category:"tablet",subcategory:"apple"}
     ]
     const laptop_item=
-    [{ name:":لپتاپ",link:"laptop"}
-    ,{name:"لپ تاپ لنوو",link:"lenovo"}
-    ,{name:"لپتاپ ایسوس",link:"asus"},
-      {name:"لپتاپ اپل",link:"apple"}
+    [{ name:":لپتاپ",category:"laptop",subcategory:""}
+    ,{name:"لپ تاپ لنوو",category:"laptop",subcategory:"lenovo"}
+    ,{name:"لپتاپ ایسوس",category:"laptop",subcategory:"asus"},
+      {name:"لپتاپ اپل",category:"laptop",subcategory:"apple"}
     ]
     const [open_mobile, setopenM] = useState(false);
     const [open_laptop, setOpenL] = useState(false);
@@ -142,7 +142,7 @@ const Nav = () => {
           {open_laptop &&
             laptop_item.map((item) => (
             
-              <ListItem sx={{ ml: 58}}  button component={Link} to={`/products/${item.link}`}>
+              <ListItem sx={{ ml: 58}}    button component={Link} to={`/products/${item.category}/${item.subcategory}`} onClick={handle_laptop}  >
                 <ListItemText
                   primary={item.name}
                   primaryTypographyProps={{
@@ -160,7 +160,7 @@ const Nav = () => {
           {open_mobile &&
             mobile_item.map((item) => (
               
-              <ListItem sx={{ mr: 4, mt: 0 }}  button  component={Link} to={`/products/${item.link}`}>
+              <ListItem sx={{ mr: 4, mt: 0 }}  button  component={Link} to={`/products/${item.category}/${item.subcategory}`} onClick={handle_mobile}   >
                 <ListItemText
                 button  component={Link} to={`/products/${item.link}`}
                   primary={item.name}
@@ -208,7 +208,7 @@ const Nav = () => {
       <ul className={`${style.list3}`}>
         {open_laptopM &&
           laptop_item.map((item) => (
-            <ListItem sx={{ ml: 15 }}  button  component={Link} to={`/products/${item.link}`}>
+            <ListItem sx={{ ml: 15 }}  button  component={Link} to={`/products/${item.category}/${item.subcategory}`}   onClick={handle_laptop} >
               <ListItemText
               button  component={Link} to={`/products/${item.link}`}
                 primary={item.name}
@@ -225,7 +225,7 @@ const Nav = () => {
       {open_mobileM &&
         mobile_item.map((item) => (
           <ul className={`${style.list4}`}>
-            <ListItem sx={{ ml: 15, mb: -1 }}  button  component={Link} to={`/products/${item.link}`}  >
+            <ListItem sx={{ ml: 15, mb: -1 }}  button  component={Link} to={`/products/${item.category}/${item.subcategory}`} onClick={handle_mobile} >
               <ListItemText
               button  component={Link} to={`/products/${item.link}`}
                 primary={item.name}

@@ -2,7 +2,6 @@ const Product = require("../../model/product");
 
 const getProducts = async (req, res) => {
   let products = await Product.find();
-
   if (req.query.category !== "") {
     products = products.filter((p) => p.category === req.query.category);
   }
@@ -11,9 +10,7 @@ const getProducts = async (req, res) => {
     products = products.filter((p) => p.subCategory === req.query.subCategory);
   }
 
-  if(req.query.name !== ""){
-    products = products.filter((p) => p.name === req.query.name);
-  }
+  
 
   if (req.query.sort === "priceasc") {
     products.sort((a, b) => a.min_price - b.min_price);
