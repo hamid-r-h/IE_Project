@@ -8,6 +8,8 @@ import app from "./app.css";
 import Favorites from "./component/Favorites";
 import EditProfile from "./component/EditProfile";
 import ResSearch from "./component/ResSearch";
+import UserShopsList from "./component/UserShopsList";
+import AddProduct from "./component/AddProduct";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path="/profile/edit" element={<EditProfile />} />
           <Route path="/products/:category/:subCategory" element={<ResSearch />} />
           <Route path="/products/:category" element={<ResSearch />} />
+          <Route path="/profile/shops" element={<UserShopsList />} />
+          <Route path="/profile/shops/:id" element={<AddProduct />} />
         </Routes>
       </Router>
     </div>
