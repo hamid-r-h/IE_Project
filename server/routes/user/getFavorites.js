@@ -11,7 +11,7 @@ const getFavorites = async (req, res) => {
   }
   return res.status(200).send({
     favorites: user.favorites,
-    message: "successfull",
+    message: 'successfull',
   });
 };
 
