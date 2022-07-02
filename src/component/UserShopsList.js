@@ -32,6 +32,11 @@ const UserShopsList = () => {
                 </Link>
               </li>
             ))}
+        <li>
+          <Link to={`/profile/shops/addshop`}>
+            <div>+</div>
+          </Link>
+        </li>
       </ul>
     </>
   );

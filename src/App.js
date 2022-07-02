@@ -11,6 +11,7 @@ import ResSearch from "./component/ResSearch";
 import UserShopsList from "./component/UserShopsList";
 import AddProduct from "./component/AddProduct";
 import ShopOptions from "./component/ShopOptions";
+import AddShop from "./component/AddShop";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/profile/shops" element={<UserShopsList />} />
           <Route path="/profile/shops/shop/addproduct/:id" element={<AddProduct />} />
           <Route path="/profile/shops/shop/:id/:name" element={<ShopOptions />} />
+          <Route path="/profile/shops/addshop" element={<AddShop />} />
         </Routes>
       </Router>
     </div>
