@@ -21,12 +21,14 @@
 }
 
 .card {
+  position: relative;
   width: 23%;
   /* background-color: seagreen; */
   text-align: center;
   box-shadow: 0 2px 8px #999;
   border-radius: 5px;
   transition: all 0.3s ease;
+  min-height: 300px;
 }
 .card:hover {
   transform: scale(1.03, 1.03);
@@ -39,6 +41,7 @@
 }
 
 .card button {
+  position: absolute;
   width: 80%;
   font-size: 16px;
   padding: 8px 10px;
@@ -46,8 +49,10 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-bottom: 10px;
   transition: all 0.3s ease;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .card button:hover {
