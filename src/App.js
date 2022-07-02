@@ -10,6 +10,7 @@ import EditProfile from "./component/EditProfile";
 import ResSearch from "./component/ResSearch";
 import UserShopsList from "./component/UserShopsList";
 import AddProduct from "./component/AddProduct";
+import ShopOptions from "./component/ShopOptions";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
           <Route path="/products/:category/:subCategory" element={<ResSearch />} />
           <Route path="/products/:category" element={<ResSearch />} />
           <Route path="/profile/shops" element={<UserShopsList />} />
-          <Route path="/profile/shops/:id" element={<AddProduct />} />
+          <Route path="/profile/shops/shop/addproduct/:id" element={<AddProduct />} />
+          <Route path="/profile/shops/shop/:id/:name" element={<ShopOptions />} />
         </Routes>
       </Router>
     </div>

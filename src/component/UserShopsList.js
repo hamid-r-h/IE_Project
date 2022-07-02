@@ -27,7 +27,7 @@ const UserShopsList = () => {
           ? ""
           : shops.map((item) => (
               <li key={item._id}>
-                <Link to={`/profile/shops/${item._id}`}>
+                <Link to={`/profile/shops/shop/${item._id}/${item.name}`}>
                   <div>{item.name}</div>
                 </Link>
               </li>
