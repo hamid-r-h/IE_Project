@@ -44,14 +44,28 @@ const ResSearch = () => {
     const [sort, setsort] = useState("date");
     const [click, setclick] = useState(false);
     const [sub, setsub] = useState("date");
+    const [fromprice, setfromprice] = useState(0);
+    const [toprice, settoprice] = useState(0);
 
 
 
 const  handle_l=()=>{
     setdata(laptop_item);
+    if(sub===""){
+      setsub("date");
+    }
+    else{
+    setsub("");
+    }
 }
 const  handle_m=()=>{
     setdata(mobile_item);
+    if(sub===""){
+      setsub("date");
+    }
+    else{
+    setsub("");
+    }
 }
 const handlemin=()=>{
   setsort("priceasc")
@@ -67,7 +81,16 @@ const handd=(item)=>{
     setsub(item);
  }
  
+const price_from=(e)=>{
+  setfromprice(e.target.value);
+}
 
+const price_to =(e)=>{
+  settoprice(e.target.value);
+}
+const send_filter_price =()=>{
+  setlist(list.filter((p) => (p.min_price>=fromprice)&&(p.min_price<=toprice)));
+}
 
    
 
@@ -84,14 +107,15 @@ const handd=(item)=>{
     const fetchList = async () => {
         const res = await axios
           .get(`http://localhost:9000/api/products?category=${title.category}&subCategory=${title.subCategory}&sort=${sort}`, {
-          
+            headers: {
+              Authorization : `Bearer ${sessionStorage.getItem("token")}`
+              }
           })
           .catch((err) => {
-              
+             setlist([]);
           });
         if (res) {
           await setlist(res.data.products);
-          console.log(res.data.products)
         }
       };
       fetchList();
@@ -117,16 +141,16 @@ const handd=(item)=>{
                                 <li>
                     <span>
             <label htmlFor="start_price"> <br></br> از قیمت </label>
-            <input type="text" id="start_price"  className="price_filter" />
+            <input type="text" id="start_price"  className="price_filter" onChange={price_from} />
 
                     </span>
                     <span>
                     <label htmlFor="end_price"> <br></br> تا قیمت</label>
-                    <input type="text" id="end_price"  className="price_filter" />
+                    <input type="text" id="end_price"  className="price_filter" onChange={price_to} />
                  </span>
                 </li>
                 <li>
-                    <button className="button_filter" >   فیلتر  </button>
+                    <button className="button_filter" onClick={send_filter_price} >   فیلتر  </button>
                 </li>
 
                 </ul>
@@ -151,7 +175,7 @@ const handd=(item)=>{
                 </Link>
                 </div>
                 <div className="card-inf">
-                  <div>{item.prices[0].price} miloins toman</div>
+                  <div>{item.min_price} miloins toman</div>
                   <div></div>
                 </div>
               
