@@ -15,6 +15,7 @@ const editUser = require("./routes/user/editUser");
 const cors = require("cors");
 const removeFromFavorites = require("./routes/user/removeFromFavorites");
 const addExistingProduct = require("./routes/user/product/addExistingProduct");
+const getUser = require("./routes/user/getUser");
 
 mongoose
   .connect("mongodb://localhost:27017/final-project")
@@ -59,6 +60,7 @@ app.post("/api/user/:shopid/report", authenticateToken, addReport);
 app.post("/api/user/favorites/:id", authenticateToken, addToFavorites);
 app.delete("/api/user/favorites/:id", authenticateToken, removeFromFavorites);
 app.put("/api/user", authenticateToken, editUser);
+app.get("/api/user", authenticateToken, getUser);
 
 app.get("/api/products", getProducts);
 app.get("/api/products/:id", getProductDetail);

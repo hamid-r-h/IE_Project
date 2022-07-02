@@ -36,7 +36,7 @@ form input {
     margin: 10px 0;
 }
 
-form button {
+.submit {
     padding: 10px 25px;
     cursor: pointer;
     border: none;
@@ -46,6 +46,21 @@ form button {
     transition: all 0.3s ease;
 }
 
-form button:hover {
+.submit:hover {
     background-color: rgb(74, 197, 127);
+}
+
+.back {
+    padding: 10px 25px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+}
+
+.back:hover{
+    background-color: rgb(71, 157, 255);
 }
