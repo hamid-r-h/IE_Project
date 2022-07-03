@@ -9,6 +9,9 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import IconButton from "@mui/material/IconButton";
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import InputAdornment from '@mui/material/InputAdornment';
 
 const SignModal = ({
   modal,
@@ -27,7 +30,9 @@ const SignModal = ({
   const [click, setclick] = useState(false);
   const [counter, setcounter] = useState(0);
   const [log_click, setlog] = useState(false);
-
+  const [showPassword, setShowPassword] = useState(false);
+  
+  
   useEffect(() => {
     const fetchRegister = async () => {
       const res = await axios
@@ -76,6 +81,11 @@ const SignModal = ({
 
     console.log(counter);
   }, [click, log_click]);
+
+  const handleClickShowPassword = () => setShowPassword(!showPassword);
+  const handleMouseDownPassword = () => setShowPassword(!showPassword);
+
+
 
   const handlepass = (e) => {
     setpassword(e.target.value);
@@ -169,10 +179,23 @@ const SignModal = ({
             رمز عبور
           </InputLabel>
           <TextField
+           type={showPassword ? "text" : "password"}
             dir="rtl"
             id="outlined-start-adornment"
             sx={{ m: 1, width: "55ch" }}
             onChange={handlepass}
+            InputProps={{ // <-- This is where the toggle button is added.
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                  >
+                   {showPassword ? <Visibility /> : <VisibilityOff />}
+                  </IconButton>
+                  </InputAdornment>
+                     )
+                    }}
           />
           {first_page && (
             <div>

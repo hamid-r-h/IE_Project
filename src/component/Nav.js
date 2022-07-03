@@ -13,7 +13,8 @@ import style from "./Nav.module.css";
 import Box from "@mui/material/Box";
 import { display } from "@mui/system";
 import { Block } from "@mui/icons-material";
-
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 const Nav = ({handle_laptop,handle_mobile}) => {
     const mobile_item = [{ name:":گوشی موبایل",category:"mobile",subcategory:""}
     ,{name:"گوشی سامسونگ",category:"mobile",subcategory:"samsung"}
@@ -37,11 +38,15 @@ const Nav = ({handle_laptop,handle_mobile}) => {
     const [openmodal, setmodal] = useState(false);
     const [first, setFirst] = useState(true);
     const [valid, setvalid] = useState(true);
-    const [login, setlogin] = useState(false);
+    const [login, setlogin] = useState();
 
 
-
-
+    useEffect(() => {
+        if(sessionStorage.getItem("token")){
+          setlogin(true);
+        }
+    
+  },[]);
 
 
     const handleMtab = () => {

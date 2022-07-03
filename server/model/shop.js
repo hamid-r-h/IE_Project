@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const shopSchema = mongoose.Schema({
     name: String,
     reports: [{
-        type: String,
+        typ: String,
         description: String
     }]
 });

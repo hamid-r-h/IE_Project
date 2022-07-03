@@ -17,7 +17,9 @@ const addReport = async (req, res) => {
       },
     });
   }
-  await shop.updateOne({ $push: { reports: req.body.report } });
+
+
+  await shop.updateOne({ $push: { reports: req.body.reports } });
   return res.status(200).send({
     message: "report added successfully",
   });

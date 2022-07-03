@@ -4,11 +4,10 @@
     width:200px;
     float: right;
     margin-right: 20px;
-    border-color:red;
 }
 
 .price_filter{
-
+    margin-bottom: 25px;
 }
 .filter input{
     border-radius: 5px;
@@ -16,9 +15,12 @@
 .filter li{
     text-align: right;
     list-style-type:none ;
-    padding-bottom: 30px;
+    padding-bottom: 35px;
+    border-radius: 8px;
 }
-    
+    .filter_item:hover{
+        cursor: pointer;
+    }
   .container{
     margin-top: 15px;
     float: left;
@@ -40,7 +42,7 @@
     flex-direction: column;
   }
   .card img{
-    width: 300px;
+    width: 150px;
   }
   
   .card-name{
@@ -55,7 +57,7 @@
   }
   
   .card-inf {
-    font-size: 10px;
+    font-size: 11px;
 
     margin-bottom: 10px;
     text-align: left;
@@ -75,5 +77,218 @@
       padding:10px 40px;
       transition: 0.5s;
   }
+  .button_filter:hover{
+      cursor: pointer;
+      opacity: 0.8;
+  }
   /* btn btn-success w-100 */
- 
+ .filters{
+     text-align: center;
+ }
+.newone{
+    padding: 10px 50px;
+    border-radius: 6px;
+    background-color: rgb(219, 233, 32);
+    border:rgb(219, 233, 32);
+    transition: 0.5s;
+
+}
+
+.min_price{
+    padding: 10px 50px;
+    margin-left: 20px;
+    border-radius: 6px;
+    background-color: rgb(219, 233, 32);
+    border:rgb(219, 233, 32);
+    transition: 0.5s;
+
+
+}
+.max_price{
+    margin-left: 20px;
+    padding: 10px 50px;
+    border-radius: 6px;
+    background-color: rgb(219, 233, 32);
+    border:rgb(219, 233, 32);
+    transition: 0.5s;
+
+
+}
+.max_price:hover{
+    cursor:pointer;
+    opacity: 0.7;
+
+}
+.min_price:hover{
+    cursor:pointer;
+    opacity: 0.7;
+
+}
+.newone:hover{
+    cursor:pointer;
+    opacity: 0.7;
+
+}
+.link_item{
+    color: black;
+    text-decoration: none;
+}
+.link_item:hover{
+    opacity: 0.7;
+}
+
+
+
+
+
+  .detail {
+    margin: auto;
+    height: 10%;
+    width: 20%;
+
+  }
+  .detail img{
+    width: 250px;
+  }
+  
+  .detail_name{
+    font-size: 14px;
+    display: flex;
+    font-family: sans-serif;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: black;
+    text-decoration: none;
+  }
+  
+  .detail_inf {
+    font-size: 12px;
+
+    margin-bottom: 5px;
+    font-family: iranyekan;
+    padding-left: 20px;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+  }
+.last_update{
+    font-size: 12px;
+
+    margin-bottom: 5px;
+    font-family: iranyekan;
+    padding-left: 20px;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.shop_price{
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    padding: 10px;
+}
+
+.shops_detail{
+    padding: 70px 50px;
+}
+.shops_title{
+    margin-top: 100px;
+
+}
+
+.layout-cart{
+    margin-top: 20px;
+    background-color:rgb(150, 225, 156);
+    width: 47%;
+    padding-bottom: 70px;
+    padding-top: 50px;
+    border-radius: 3px;
+    padding-right: 20px;
+    padding-left: 60px;
+    margin-left: 320px;
+  }
+  
+  .title-cart{
+    
+    font-weight: bold;
+    font-size: 15px;
+    padding-right: 40px;
+  }
+  .price-cart{
+      position: absolute;
+      padding-left: 300px;
+  }
+  .price-cart div{
+    padding-bottom: 20px;
+
+  }
+  .price-cart button{
+      margin-top: 10px;
+      padding: 10px 30px;
+      border-radius: 5px;
+      background-color: #de9608;
+      border: #de9608;
+      font-size: 15px;
+  }
+  .price-cart button:hover{
+      cursor: pointer;
+  }
+  .problem{
+      padding-left: 130px;
+      padding-bottom: 10px;
+  }
+  
+  .description{
+       margin-top: 10px;
+        text-align: right;
+        border-radius: 7px;
+        font-family: iranyekan;
+        margin-left: 100px;
+        padding-left: 50px;
+        padding-top: 5px;
+        }
+  .lable_description{
+    font-family: iranyekan;
+
+    margin-left: 220px;
+  }
+  .send_report{
+    font-family: iranyekan;
+
+      margin-top: 20px;
+    margin-left: 200px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+
+    font-size: 13px;
+    border-radius: 10px;
+    background-color:#f1b717 ;
+    border: #f1b717;
+
+    transition: 0.5s;
+  }
+  .send_report:hover{
+      opacity: 0.7;
+      cursor: pointer;
+  }
+  .card_button{
+    width: 100px;
+    height: 40px;
+    background-color: green;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    transition: 500ms;
+    color: rgb(237, 229, 229);
+  }
+  .card_button:hover {
+    background-color: rgb(21, 224, 21);
+    color: black;
+    cursor: pointer;
+  }

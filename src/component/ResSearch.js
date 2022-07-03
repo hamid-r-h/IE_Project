@@ -8,6 +8,15 @@ import { useEffect } from "react";
 import axios from "axios";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
+
+
+const authAxios = axios.create({
+  headers: {
+    Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+  },
+});
+
+
 const ResSearch = () => {
 
 
@@ -92,7 +101,13 @@ const send_filter_price =()=>{
   setlist(list.filter((p) => (p.min_price>=fromprice)&&(p.min_price<=toprice)));
 }
 
-   
+const addFav = (id) => {
+  authAxios
+    .post(`http://localhost:9000/api/user/favorites/${id}`)
+    .then()
+    .catch((err) => console.log(err));
+};
+
 
 
     useEffect(() => {
@@ -170,13 +185,13 @@ const send_filter_price =()=>{
               <img src={item.img} alt="Not Found" className="img"/>
 
                 <div className="nam" >
-                <Link to={`/products/${item.name}`} className="card-name">
+                <Link to={`/product/${item._id}`} className="card-name">
                   {item.name}
                 </Link>
                 </div>
                 <div className="card-inf">
-                  <div>{item.min_price} miloins toman</div>
-                  <div></div>
+                  <div>{item.min_price} millionin toman</div>
+                  <div>  <button className="card_button"  onClick={() => addFav(item._id)} >  افزودن به لیست محبوب ها </button> </div>
                 </div>
               
               </div>

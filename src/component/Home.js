@@ -10,8 +10,23 @@ import Grid from "@mui/material/Grid";
 import SignModal from "./SignModal";
 import Nav from "./Nav"
 import style from "./Home.module.css";
+import { useHistory } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+  const [item, setitem] = useState("");
+ const  handleitem=(e)=>{
+    setitem(e.target.value);
+    console.log(item);
+
+  }
+ const handleKeyDown=(e)=>{
+  console.log(item);
+  if (e.key === 'Enter') {
+  navigate(`/products/${item}`);
+  }
+  }
   return (
     <div>
       {<Nav/>}
@@ -27,6 +42,8 @@ const Home = () => {
             type="text"
             placeholder="نام کالا را وارد کنید "
             name="search"
+            onChange={handleitem}
+            onKeyDown={handleKeyDown}
           />
           <i className="fa fa-search fa-lg" aria-hidden="true"></i>
         </div>

@@ -26,6 +26,7 @@ const Favorites = () => {
       .get("http://localhost:9000/api/user/favorites")
       .then((res) => {
         setFavs(res.data.favorites);
+        console.log(res.date.favorites);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -42,7 +43,7 @@ const Favorites = () => {
                 {/* <Link to={`/products`}> */}
                 <h3>{item.name}</h3>
                 {/* </Link> */}
-                <p>{item.description.slice(0, 20) + "..."}</p>
+                <p>{}</p>
                 <button onClick={() => removeFav(item._id)}>
                   حذف از محبوب ها
                 </button>

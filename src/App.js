@@ -8,11 +8,12 @@ import app from "./app.css";
 import Favorites from "./component/Favorites";
 import EditProfile from "./component/EditProfile";
 import ResSearch from "./component/ResSearch";
+import Product from "./component/Products";
 import UserShopsList from "./component/UserShopsList";
 import AddProduct from "./component/AddProduct";
 import ShopOptions from "./component/ShopOptions";
 import AddShop from "./component/AddShop";
-
+import Report from "./component/Report";
 function App() {
   return (
     <div className="App">
@@ -24,10 +25,12 @@ function App() {
           <Route path="/profile/edit" element={<EditProfile />} />
           <Route path="/products/:category/:subCategory" element={<ResSearch />} />
           <Route path="/products/:category" element={<ResSearch />} />
+          <Route path="/product/:id" element={<Product/>} />
           <Route path="/profile/shops" element={<UserShopsList />} />
           <Route path="/profile/shops/shop/addproduct/:id" element={<AddProduct />} />
           <Route path="/profile/shops/shop/:id/:name" element={<ShopOptions />} />
           <Route path="/profile/shops/addshop" element={<AddShop />} />
+          <Route path="/profile/shops/shop/reports/:id" element={<Report />} />
         </Routes>
       </Router>
     </div>

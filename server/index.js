@@ -62,7 +62,7 @@ app.post(
   addExistingProduct
 );
 app.get("/api/user/:shopid/reports", authenticateToken, getReports);
-app.post("/api/user/:shopid/report", authenticateToken, addReport);
+app.post("/api/user/:shopid/report", addReport);
 app.post("/api/user/favorites/:id", authenticateToken, addToFavorites);
 app.delete("/api/user/favorites/:id", authenticateToken, removeFromFavorites);
 app.get("/api/user/favorites", authenticateToken, getFavorites);
