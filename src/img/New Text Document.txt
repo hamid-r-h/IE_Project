@@ -1,0 +1,39 @@
+ <div>
+        <div className="navbar">
+        <ul>
+        <li className="sign"> ورود/ثبت نام </li>
+        <li className="laptop"> لپ تاپ </li>
+        <li className="mobile"> موبایل و تبلت </li>
+        </ul>
+        <label htmlFor="hamburger-input" className="icon-burger">
+      <span className="lines">
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+      </span>
+    </label>
+      </div>
+    <input type="checkbox" id="hamburger-input" className="burger-shower" />
+    <span className="sign-mini">      ورود/ثبت نام  </span>
+    <div className="drop-down">
+  
+    <ul>
+        <li className=""> لپ تاپ </li>
+        <li className=""> موبایل و تبلت </li>
+      </ul>
+
+        
+      
+       </div>
+       <div className="title">
+        <div className="title-first">
+            <h1> ترب </h1>
+           <p>موتور جستجوی هوشمند خرید</p> 
+        </div>
+        <img src={torob} alt="torob"/>
+        <div>
+        <input type="text" placeholder="Name"/>
+        </div>
+       </div>
+     
+       </div>
